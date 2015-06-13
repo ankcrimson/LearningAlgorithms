@@ -6,6 +6,7 @@ import java.io.FileReader;
 /*
  * Dijkstra's Algorithm Version to calculate the shortest path from a node to any node
  * in a weighted graph
+ * Assumption: input is sorted in terms of node number
  * */
 public class Dijkstra {
 	public static final int numberofnodes=6;
@@ -27,7 +28,9 @@ public static void main(String[] args) {
 			int to=Integer.parseInt(vals[1])-1;
 			int wt=Integer.parseInt(vals[2]);
 			if(wts[to]>(wts[frm])+wt)
+			{
 				wts[to]=(wts[frm])+wt;
+			}
 		}
 		for(int i=0;i<numberofnodes;i++)
 		{

@@ -3,13 +3,17 @@ package com.graphs.paths;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-
+/*
+ * Dijkstra's Algorithm Version to calculate the shortest path from a node to any node
+ * in a weighted graph
+ * */
 public class Dijkstra {
+	public static final int numberofnodes=6;
 public static void main(String[] args) {
 	try{
 		FileReader fr=new FileReader("com.graphs.paths/dijkstra.in");
 		BufferedReader br=new BufferedReader(fr);
-		int[] wts=new int[10];
+		int[] wts=new int[numberofnodes];
 		//wts[0]=0 in java by default
 		for(int i=1;i<10;i++)
 		{
@@ -25,7 +29,7 @@ public static void main(String[] args) {
 			if(wts[to]>(wts[frm])+wt)
 				wts[to]=(wts[frm])+wt;
 		}
-		for(int i=0;i<6;i++)
+		for(int i=0;i<numberofnodes;i++)
 		{
 			System.out.println("Weight till "+(i+1)+" is "+wts[i]);
 		}

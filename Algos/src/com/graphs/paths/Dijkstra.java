@@ -15,7 +15,7 @@ public static void main(String[] args) {
 		BufferedReader br=new BufferedReader(fr);
 		int[] wts=new int[numberofnodes];
 		//wts[0]=0 in java by default
-		for(int i=1;i<10;i++)
+		for(int i=1;i<numberofnodes;i++)
 		{
 			wts[i]=Integer.MAX_VALUE;
 		}

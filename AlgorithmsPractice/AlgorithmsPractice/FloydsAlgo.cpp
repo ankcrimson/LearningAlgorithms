@@ -2,9 +2,9 @@
 //  main.cpp
 //  AlgorithmsPractice
 //
-//  Created by Srivastava, Ankur (ETW) on 1/25/16.
+//  Created by Srivastava, Ankur on 1/25/16.
 //  Copyright © 2016 Srivastava, Ankur (ETW). All rights reserved.
-//
+// Implements Floyd’s Cycle-Finding Algorithm
 
 #include <iostream>
 

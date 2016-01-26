@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		67FCD7E61C571785000A8BBC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67FCD7E51C571785000A8BBC /* main.cpp */; };
+		67FCD7E61C571785000A8BBC /* FloydsAlgo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67FCD7E51C571785000A8BBC /* FloydsAlgo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		67FCD7E21C571785000A8BBC /* AlgorithmsPractice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgorithmsPractice; sourceTree = BUILT_PRODUCTS_DIR; };
-		67FCD7E51C571785000A8BBC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		67FCD7E51C571785000A8BBC /* FloydsAlgo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FloydsAlgo.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 		67FCD7E41C571785000A8BBC /* AlgorithmsPractice */ = {
 			isa = PBXGroup;
 			children = (
-				67FCD7E51C571785000A8BBC /* main.cpp */,
+				67FCD7E51C571785000A8BBC /* FloydsAlgo.cpp */,
 			);
 			path = AlgorithmsPractice;
 			sourceTree = "<group>";
@@ -118,7 +118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67FCD7E61C571785000A8BBC /* main.cpp in Sources */,
+				67FCD7E61C571785000A8BBC /* FloydsAlgo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,15 +1,15 @@
 package com.stackqueue;
 
-public class StackLL {
+public class StackLL<T> {
 	
 	Node top;
 	
-	private static class Node {
+	private static class Node<T> {
 		Node next;
-		int value;
+		T value;
 	}
 	
-	public void push(int i) {
+	public void push(T i) {
 		Node node = new Node();
 		node.value=i;
 		
@@ -22,16 +22,16 @@ public class StackLL {
 		}
 	}
 	
-	public int pop() {
-		if(top==null) return -1;
+	public T pop() {
+		if(top==null) return null;
 		Node curr=top;
 		top=top.next;
-		return curr.value;
+		return (T)curr.value;
 	}
 
 	public static void main(String[] args) {
 
-		StackLL stackLL = new StackLL();
+		StackLL<Integer> stackLL = new StackLL<Integer>();
 		stackLL.push(4);
 		stackLL.push(10);
 		System.out.println(stackLL.pop());

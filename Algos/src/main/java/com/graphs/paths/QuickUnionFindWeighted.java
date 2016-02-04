@@ -5,61 +5,63 @@ import java.io.FileReader;
 import java.util.HashSet;
 import java.util.Set;
 
-public class QuickUnionFind {
+public class QuickUnionFindWeighted {
 
   int[] parents;
+  int[] weights;
   
-  public QuickUnionFind(int N) {
-    parents=new int[N];
+  public QuickUnionFindWeighted(int N) {
+    parents = new int[N];
+    weights = new int[N];
     for(int i=0;i<N;i++) {
       parents[i]=i;
+      weights[i]=1;
     }
   }
   
   public boolean find(int a, int b) {
     while(parents[a]!=a)
+      {
       a=parents[a];
+      parents[a]=parents[parents[a]];
+      }
     while(parents[b]!=b)
+      {
       b=parents[b];
+      parents[b]=parents[parents[b]];
+      }
     return a==b;
   }
   
   public void union(int x ,int y) {
+    if(find(x, y))
+      return;
     while(parents[x]!=x)
       x=parents[x];
     while(parents[y]!=y)
       y=parents[y];
-    parents[y]=x;
+    if(weights[y]<weights[x]) {
+      parents[y]=x;
+      weights[x]+=weights[y];
+    }
+    else {
+      parents[x]=y;
+      weights[y]+=weights[x];
+    }
   }
   
   public static void main(String[] args) throws Exception {
     //try(FileReader fr=new FileReader("src/main/resources/com.graphs.paths/mediumUF.txt");
     try(FileReader fr=new FileReader("src/main/resources/com.graphs.paths/mediumUF.txt");
-                BufferedReader br=new BufferedReader(fr);
+                    BufferedReader br=new BufferedReader(fr);
         ) {
       int N=Integer.parseInt(br.readLine());
-      QuickUnionFind unionFind = new QuickUnionFind(N);
+      QuickUnionFindWeighted unionFind = new QuickUnionFindWeighted(N);
       String line="";
       while((line=br.readLine())!=null) {
         String[] ab=line.split(" ");
         unionFind.union(Integer.parseInt(ab[0]),Integer.parseInt(ab[1]));
       }
-      
-      for(int i=0;i<unionFind.parents.length;i++)
-        System.out.println(i+" => "+unionFind.parents[i]);
-      
-      
-      System.out.println(unionFind.find(5, 3));//f      
-      System.out.println(unionFind.find(0, 3));//f      
-      System.out.println(unionFind.find(3, 0));//f      
-      System.out.println(unionFind.find(7, 8));//f      
-      System.out.println(unionFind.find(6, 0));//true      
-      System.out.println(unionFind.find(2, 6));//true      
-      System.out.println(unionFind.find(2, 4));//f      
-      System.out.println(unionFind.find(2, 3));//f      
-      
-      System.out.println(unionFind.find(473, 618));//true
-      System.out.println(unionFind.find(473, 528));//true
       
       Set set = new HashSet<>();
       for(int i=0;i<unionFind.parents.length;i++) {

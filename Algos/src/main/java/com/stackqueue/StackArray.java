@@ -1,9 +1,31 @@
 package com.stackqueue;
 
-public class StackArray<T> {
+import java.util.Iterator;
+
+public class StackArray<T> implements Iterable<T> {
 
 	T[] vals;
 	int top;
+	int ctr;
+	
+	@Override
+	public Iterator<T> iterator() {
+		// TODO Auto-generated method stub
+		ctr=-1;
+		return new Iterator<T>() {
+			@Override
+			public T next() {
+				// TODO Auto-generated method stub
+				return vals[++ctr];
+			}
+			@Override
+			public boolean hasNext() {
+				// TODO Auto-generated method stub
+				return ctr<top;
+			}
+		};
+	}
+	
 	
 	public StackArray(){
 		this(4);
@@ -58,6 +80,10 @@ public class StackArray<T> {
 		stackArray.push(2);
 		stackArray.push(7);
 		stackArray.push(8);
+		System.out.print("Current State: ");
+		for(Object t: stackArray)
+			System.out.print(t+", ");
+		System.out.println();
 		System.out.println(stackArray.pop());
 		System.out.println(stackArray.pop());
 		System.out.println(stackArray.pop());

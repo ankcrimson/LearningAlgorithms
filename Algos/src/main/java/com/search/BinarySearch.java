@@ -3,7 +3,7 @@ package com.search;
 public class BinarySearch {
 
   public int find(int[] sorted,int val) {
-    int a=0,b=sorted.length;
+    int a=0,b=sorted.length-1;
     int mid=(a+b)/2;
     while(a<=b) {
       if(sorted[mid]==val)

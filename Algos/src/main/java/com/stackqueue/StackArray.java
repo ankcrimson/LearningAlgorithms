@@ -23,6 +23,11 @@ public class StackArray<T> implements Iterable<T> {
 				// TODO Auto-generated method stub
 				return ctr<top;
 			}
+			@Override
+			public void remove() {
+			// TODO Auto-generated method stub
+			        
+			}
 		};
 	}
 	

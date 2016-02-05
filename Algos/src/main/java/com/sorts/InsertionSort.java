@@ -1,6 +1,6 @@
 package com.sorts;
 
-public class MergeSort {
+public class InsertionSort {
   static int swaps=0;
   public boolean less(Comparable a, Comparable b) {
     swaps++;
@@ -26,9 +26,9 @@ public class MergeSort {
   }
   
   public static void main(String[] args) {
-    MergeSort mergeSort = new MergeSort();
+    InsertionSort insertionSort = new InsertionSort();
     String[] stringArr="THISISASORTEXAMPLE".split("");
-    mergeSort.sort(stringArr);
+    insertionSort.sort(stringArr);
     for(String s:stringArr)
       System.out.print(s);
     System.out.println();

@@ -1,8 +1,9 @@
 package com.sorts;
 
 public class MergeSort {
-
+  static int swaps=0;
   public boolean less(Comparable a, Comparable b) {
+    swaps++;
     if(a.compareTo(b)<0)
       return true;
     return false;
@@ -31,5 +32,6 @@ public class MergeSort {
     for(String s:stringArr)
       System.out.print(s);
     System.out.println();
+    System.out.println("Swaps:"+swaps);
   }
 }

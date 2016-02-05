@@ -1,7 +1,7 @@
 package com.sorts;
 
 public class ShellSort {
-
+static int swaps=0;
   public boolean less(Comparable a, Comparable b) {
     if(a.compareTo(b)<0)
       return true;
@@ -9,6 +9,7 @@ public class ShellSort {
   }
   
   public void swap(Comparable[] arr, int i, int j) {
+    swaps++;
     Comparable tmp = arr[i];
     arr[i] = arr[j];
     arr[j] = tmp;
@@ -42,5 +43,6 @@ public class ShellSort {
     for(String s:stringArr)
       System.out.print(s);
     System.out.println();
+    System.out.println("Swaps:"+swaps);
   }
 }

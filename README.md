@@ -5,7 +5,7 @@
 * Dijkstra Algorithm
 * Floyd’s Cycle-Finding Algorithm
 * Convex Hull - Graham Scan
-* Convex Hell - Jarvis Algo
+* Convex Hull - Jarvis Algo
 * Union Quick Find
 * Quick Union Find
 * Weighted Quick Union Find with path compression

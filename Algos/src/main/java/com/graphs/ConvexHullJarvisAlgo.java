@@ -13,7 +13,7 @@ public class ConvexHullJarvisAlgo {
 
   public boolean findPolarAngle(Point a, Point b, Point c) {
     int polarAngle = (b.x-a.x)*(c.y-a.y) - (b.y-a.y)*(c.x-a.x);
-    if(polarAngle<0) return true;
+    if(polarAngle>0) return true;
     return false;
   }
   public List<Point> findHull(List<Point> graph) {

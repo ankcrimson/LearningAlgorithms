@@ -26,8 +26,8 @@ public class LineSegmentInteract {
    */
   public int getOrientation(Point a, Point b, Point c) {
     int orinetation= (b.x-a.x)*(c.y-a.y) - (b.y-a.y)*(c.x-a.x);
-    if(orinetation==0) return 0;
-    return (orinetation>0)?1:-1;
+    if(orinetation==0) return 0;//collinear
+    return (orinetation>0)?1:-1;//counterclockwise/clockwise
   }
   
   /**

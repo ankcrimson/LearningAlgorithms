@@ -25,28 +25,26 @@ public class QuickSort {
   }
   
   public int partition(Comparable[] arr, int l, int r) {
-    int i=l, j=r;
-    int pivot=(l+r)/2;
-    while(i<=j) {
-      while(less(arr[i],arr[pivot]))
+    int i=l-1;
+    int pivot=r;
+    for(int j=l;j<r;j++)
+      if(less(arr[j],arr[pivot])) {
         i++;
-      while(less(arr[pivot],arr[j]))
-        j--;
-      if(i<=j) {
         swap(arr,i,j);
-        i++;
-        j--;
+        
       }
-    }
-    return i;
+  
+  i++;
+  swap(arr,i,pivot);
+  return i;
   }
   
   public void sort(Comparable[] arr, int l, int r) {
-     int ind=partition(arr, l, r);
-     if(l<ind-1)
-       sort(arr, l, ind-1);
-     if(ind<r)
-       sort(arr,ind,r);
+     if(l<r) {
+       int pivot=partition(arr, l, r);
+       sort(arr, l, pivot-1);
+       sort(arr,pivot+1,r);
+     }
   }
   
   public void sort(Comparable[] arr) {

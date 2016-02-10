@@ -16,6 +16,7 @@
 * Knuth Shuffle
 * Insertion Sort
 * Shell Sort
+* Quick Sort
 * Stack using LinkedList
 * Stack using Array
 * Queue using LinkedList

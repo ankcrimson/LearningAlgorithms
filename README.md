@@ -22,3 +22,5 @@
 * Queue using LinkedList
 * Queue using Array
 * Dijkstra's two stack algo for calculating an equation
+
+  Todo: add more
